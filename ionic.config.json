@@ -1,0 +1,7 @@
+{
+  "name": "carnet_de_voyage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
