@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/carnet"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ loadedCarnet?.destination }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-label> {{ loadedCarnet?.name }} </ion-label>
+    <ion-row>
+      <ion-col>
+        <p class="ion-text-right">{{ loadedCarnet?.date }}</p>
+        <ion-img [src]="loadedCarnet?.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+    <ion-col>
+      <ion-item>{{ loadedCarnet?.description }}</ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-button (click)="onDeleteCarnet()"><ion-icon name="trash" slot="icon-only"></ion-icon> </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="statusCommentaire()" >Commentaire</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid *ngIf="!commentStatus">
+  <ion-row>
+    <ion-col>
+      Et Non pas de comment j'ai pas fini signer : Pierre
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid *ngIf="commentStatus">
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label position="floating">Name:</ion-label>
+        <ion-input type="text" [ngModel]="elComment.name" ></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row> 
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label position="floating">Message:</ion-label>
+        <ion-textarea type="text"  [ngModel]="elComment.message"></ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row> 
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="addCommentaire()" >
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+      

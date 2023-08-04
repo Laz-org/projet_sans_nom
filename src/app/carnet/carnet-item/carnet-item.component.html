@@ -1,0 +1,14 @@
+  <p *ngIf="!item">no input, error 500</p>
+  <ion-card button="true" [href]="'carnet/'+item.id" color="dark" *ngIf="item">
+    <ion-card-header>
+      <ion-card-title>
+        {{ item.destination }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        voyage de {{ item.name }} le {{ item.date }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-avatar slot="start"><img alt="" src={{item.imageUrl}} /></ion-avatar>
+    </ion-card-content>
+  </ion-card>

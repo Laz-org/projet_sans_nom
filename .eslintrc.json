@@ -5,6 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
+        // "project": ["carnet_de_voyage/tsconfig.json"],
         "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
